@@ -4,14 +4,14 @@
 ### __Overview of the implement:__
 
   Logistic Regression is kind of linear classification algorithm.        
-  For ML training use, only need to visit functions in MultiLogisticRegression class. 
+  For ML training use, only need to visit functions in MultiLogisticRegression class.  
 
 ### __Class:__
 #### __\[internal\]LogisticRegression__
 
     Logistic Regression for binary classification. 
     
- * ___Variables___      
+ * _Variables_      
         
         eta: learing rate
         n_iter: training times
@@ -20,7 +20,7 @@
         w_: weight vector for features
         cost_: cost record for the whole training process
  
- * ___\[internal\]LogisticRegression(eta, n_iter, random_state, C)___    
+ * _\[internal\]LogisticRegression(eta, n_iter, random_state, C)_    
  
         eta: learning rate  
         n_iter: training times  
@@ -28,18 +28,18 @@
         C: parameter for regularizationn.  
     __e.g.__  lgr = LogisticRegression(eta=0.01, n_iter=50, random_state=1, C=10000)
     
- * ___\[internal\]fit(X, y)___    Main function for training. 
+ * _\[internal\]fit(X, y)_    Main function for training. 
     
         X: training feature set     
         y: training label set   
     __e.g.__  lgr.fit(X_train, y_train)
     
- * ___\[internal\]probability(X)___    Give the probability of being in current class. 
+ * _\[internal\]probability(X)_    Give the probability of being in current class. 
     
         X: testing feature set  
     __e.g.__  prob = lgr.probability(X_test)
     
- * ___\[internal\]predict(X)___    Give a prediction for given feature set. 
+ * _\[internal\]predict(X)_    Give a prediction for given feature set. 
      
         X: testing feature set  
     __e.g.__  y_pred = lgr.predict(X_test)
@@ -93,7 +93,7 @@
 
     To describe a single node in decision tree.  
     
- * ___Variables___      
+ * _Variables_      
         
         X, y: features and labels of samples contained in current node
         isLeaf: whether current node is leaf node or not
@@ -103,7 +103,7 @@
         classes: list of sample classes contained in current node
         class_: Mode of classes. The overall class of current node
         
- * ___\[internal\]TreeNode(X, y, childs, info, isLeaf, split_feature, split_value)___    
+ * _\[internal\]TreeNode(X, y, childs, info, isLeaf, split_feature, split_value)_    
  
         X: feature matrix for sample in current node
         y: label array for sample in current node
@@ -114,12 +114,12 @@
         
     __e.g.__  tn = TreeNode(X=X, y=y, childs=childs, info=info, isLeaf=False, split_feature=feature_best, split_value=value_best)
     
- * ___\[internal\]predict_single(X)___    Presict the class for single sample 
+ * _\[internal\]predict_single(X)_    Presict the class for single sample 
     
         X: feature array for the single sample   
     __e.g.__  y_pred = tn.predict_single(x_test)
     
-* ___\[internal\]predict(X)___    Predict the classes for an nparray of samples
+* _\[internal\]predict(X)_    Predict the classes for an nparray of samples
 
         X: feature matrix for the group of samples
  
@@ -129,7 +129,7 @@
 
     To build a decision tree based on a set of training data.   
     
- * ___Variables___      
+ * _Variables_      
         
         max_depth: maximum depth for the decision tree
         min_gain: minimum gain for each division
@@ -137,7 +137,7 @@
         root: tree root node.
         feature index: to pick features to develop current tree
         
- * ___\[internal\]DecisionTree(impurity_mode, max_depth, min_gain)___    
+ * _\[internal\]DecisionTree(impurity_mode, max_depth, min_gain)_    
  
         max_depth: maximum depth for the decision tree. default=5
         min_gain: minimum gain for each division. default=0.0
@@ -145,13 +145,13 @@
         
     __e.g.__  tree = DecisionTree(impurity_mode='gini', max_depth=10, min_gain=0.0)
     
- * ___\[internal\]impurity(y):___    Calculate the impurity of a set of samples based on impurity mode
+ * _\[internal\]impurity(y):_    Calculate the impurity of a set of samples based on impurity mode
     
         y: label array of samples
         
     __e.g.__  imp_currnt = tree.impurity(y)
  
- * ___\[internal\]split(X, y, feature, value):___    Binary split the samples. 
+ * _\[internal\]split(X, y, feature, value):_    Binary split the samples. 
     
         X: feature matrix of samples
         y: label array of samples
@@ -162,7 +162,7 @@
         
     __e.g.__  childnode_X, childnode_y = tree.split(X, y, feature=1, value='yellow')
     
- * ___\[internal\]build_decision_tree(X, y, depth):___    Main function used to develop decision tree. 
+ * _\[internal\]build_decision_tree(X, y, depth):_    Main function used to develop decision tree. 
     
         X: training feature set     
         y: training label set 
@@ -172,19 +172,19 @@
         
     __e.g.__  tree.build_decision_tree(X_train, y_train)
     
-* ___\[internal\]set_feature_index(feature_index)___    Record the feature index after sampling
+* _\[internal\]set_feature_index(feature_index)_    Record the feature index after sampling
 
         feature_index: list of index for features used in current tree
  
     __e.g.__  tree.set_feature_index(sample_col_index)
 
-* ___\[internal\]predict_single(X)___    Presict the class for single sample 
+* _\[internal\]predict_single(X)_    Presict the class for single sample 
 
         X: feature array for the single sample   
  
     __e.g.__  y_pred = tree.predict_single(x_test)
 
-* ___\[internal\]predict(X)___    Predict the classes for an nparray of samples
+* _\[internal\]predict(X)_    Predict the classes for an nparray of samples
 
          X: feature matrix for the group of samples
  
@@ -219,7 +219,7 @@
         
     __e.g.__  rf = RandomForest(n_estimation=100, sample_percentage=0.95, feature_percentage=0.25, max_depth=10, showProcess=False)
     
- * ___\[internal\]sample(X, y):___    Function for random sampling. 
+ * _\[internal\]sample(X, y):_    Function for random sampling. 
     
         X: training feature set     
         y: training label set  
