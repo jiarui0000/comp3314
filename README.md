@@ -199,19 +199,17 @@
         n_estimation: number of decision trees in the system. 
         feature_percentage: proportion of features chosed for each tree. 
         sample_percentage: proportion of training samples number and total sample number. 
-        random_state: random function parameter
         impurity_mode: impurity calculate mode
         max_depth: maximum depth for the decision tree
         min_gain: minimum gain for each division
         showProcess: whether print sample number and feature number in each training to show the process
         trees: list of trees in the forset
         
- * ___RandomForest(n_estimation, feature_percentage, sample_percentage, random_state, impurity_mode=, max_depth, min_gain, showProcess)___    
+ * ___RandomForest(n_estimation, feature_percentage, sample_percentage, impurity_mode=, max_depth, min_gain, showProcess)___    
  
         n_estimation: number of decision trees in the system. default=100
         feature_percentage: proportion of features chosed for each tree. Usually low. defalut=0.3
         sample_percentage: proportion of training samples number and total sample number. Usually close to 1. defalut=0.95
-        random_state: random function parameter. defalut=1
         impurity_mode: impurity calculate mode. defalut='gini'
         max_depth: maximum depth for the decision tree. defalut=8
         min_gain: minimum gain for each division. defalut=0.0
